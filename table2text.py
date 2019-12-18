@@ -1,14 +1,14 @@
 from docx import Document
 
-wordDoc = Document('table.docx')
+tableDocument = Document('table.docx')
 
-document = Document()
+textDocument = Document()
 
-for table in wordDoc.tables:
+for table in tableDocument.tables:
     for row in table.rows:
         s = ""
         for cell in row.cells:
             s += cell.text + " - "
-        document.add_paragraph(s)
+        textDocument.add_paragraph(s)
         
-document.save("text.docx")
+textDocument.save("text.docx")
